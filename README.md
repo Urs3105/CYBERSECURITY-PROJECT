@@ -12,7 +12,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - [Ansible Configuration file](Ansible/ansible.cfg)
   - [Ansible hosts file](Ansible/hosts)
   - [Ansible Playbook Installation Yaml file](Ansible/my-playbook.yml)
-  - [Ansible Elk Installation Yaml file](Ansible/install-elk.yml)
+  - [Elk stack Installation Yaml file](Ansible/install-elk.yml)
   - [Ansible Filebeat Configuration file](Ansible/Filebeat-config.yml)
   - [Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml)
   - [Ansible Metricbeat Configuration Yaml file](Ansible/Metricbeat-config.yml)
@@ -76,40 +76,31 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses      |
 |----------|---------------------|-------------------------  |
-| Jump Box |     No              | Personal IP Address only  |
-| Web1     |     No              | 10.0.0.4 Jumpbox          |
-| Web2     |     No              | 10.0.0.4 Jump box         |
-| Web3     |     No              | 10.0.0.4 Jump box         |
-| ELKServer|     No              | 10.0.0.4/Personal IP Address|
+| Jump Box |     No/Yes          | Personal IP, 10.1.0.4.    |
+| Web1     |     No              | 10.0.0.4 Jumpbox, 10.1.0.4|
+| Web2     |     No              | 10.0.0.4 Jump box,10.1.0.4|
+| Web3     |     No              | 10.0.0.4 Jump box,10.1.0.4|
+| ELKServer|     No/Yes          | 10.0.0.4/Personal IP Address|
 
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - _TODO: What is the main advantage of automating configuration with Ansible?
--Answer: Ansible being an open source automation tool simplifies complex task and increases efficiency.
+***Answer: Ansible being an open source automation tool simplifies complex task and increases efficiency.
          Ansible is advantageous because of it being easy to set up and use. Several Virtual Machines could be configured by running a script(Ansible playbook)
          No special codes or skills were needed for the configuration, a playbook was designed and Ansible handled the configuration on the machines after Ansible          control node has already been configured. Ansible used SSH to communicate with the remote hosts and run the task in the playbook._
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-Create a new vNet in a new region, within your resource group.
-
-
-Create a Peer Network Connection between your two vNets.
-
-
-Create a new VM. Deploy a new VM into the new vNet with it's own Security Group. This VM will host the ELK server.
-
-
-Download and configure a container. Download and configure the elk-docker container onto this new VM.
-
-
-Launch and expose the container. Launch the elk-docker container to start the ELK server.
-
-
-Implement identity and access management. Configure your new Security group so you can connect to ELK via HTTP, and view it through the browser.
-
+***Install docker- Installs Docker on the system
+***Install python3-pip - Installs python3-pip on the docker
+***Install docker module to pip 3 - Installs a docker module to python3-pip for the Elk stack
+***Increase virtual memory - The virtual memory needs to be increased to 262144 use Elk stack on the next system restart.
+***Download and launch a docker Elk Container - This will download and run the sep/elk:761 container.The container should be started with these published ports:
+5601:5601(Kibana)
+9200:9200(ElasticSearch)
+5044:5044(Filebeat)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
