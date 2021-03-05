@@ -10,7 +10,13 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - _TODO: Enter the playbook file.
   - [Ansible Configuration file](Ansible/ansible.cfg)
-  - [
+  - [Ansible hosts file](Ansible/hosts)
+  - [Ansible Playbook Installation Yaml file](Ansible/my-playbook.yml)
+  - [Ansible Elk Installation Yaml file](Ansible/install-elk.yml)
+  - [Ansible Filebeat Configuration file](Ansible/Filebeat-config.yml)
+  - [Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml)
+  - [Ansible Metricbeat Configuration Yaml file](Ansible/Metricbeat-config.yml)
+  - [Ansible Metricbeat Installation Playbook Yaml file](Ansible/Metricbeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topologu
