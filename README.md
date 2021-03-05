@@ -3,8 +3,8 @@
 The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
-![Elk Stack Project](https://user-images.githubusercontent.com/79960810/109855030-054caa80-7c15-11eb-8a42-23d34d2ecfb8.png)
 
+<img width="1040" alt="ELK Stack Deployment" src="https://user-images.githubusercontent.com/79960810/110149954-e4629180-7d9b-11eb-872c-9526df0cdbff.png">
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -158,6 +158,6 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 * sudo docker ps (To check the current status of the container)
 * sudo docker attach container (Container name). This will give you a shell on the specific container
 * cd /etc/ansible 
-* nano hosts (Update the file with IP addresses of webservers that needs ansible playbook run on)
+* nano hosts (Update the file with Private IP addresses of webservers that needs ansible playbook run on)
 * ansible -m ping all ( This pings all of the webservers listed in the hosts file)
 * ansible-playbook my-playbook.yml ( The ansible-playbook will run the contents of the desired named yml file)
