@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Prints free memory and output to free_mem.txt file
+free -h > ~/backups/freemem/free_mem.txt
+
+# Prints disk usage and output to disk_usage.txt
+du -h > ~/backups/diskuse/disk_usage.txt
+
+# List all open files and output to open_list.txt
+lsof > ~/backups/openlist/open_list.txt
+
+# Prints free disk space into free_disk.txt
+df -h > ~/backups/freedisk/free_disk.txt
