@@ -41,10 +41,10 @@ Answer: A jump box is essentially identical to a gateway router. It gives system
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 
 - _TODO: What does Filebeat watch for?_ 
--Answer: Filebeat enables analysts to monitor files for suspicious changes. Filebeat can be used to collect, analyze and visualize ELK logs in a single command.Filebeat monitors, generate and organise the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. is built to collect data about specific files on remote machines and must be installed on the VMs you want to monitor.
+***Answer:** Filebeat enables analysts to monitor files for suspicious changes. Filebeat can be used to collect, analyze and visualize ELK logs in a single command.Filebeat monitors, generate and organise the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. is built to collect data about specific files on remote machines and must be installed on the VMs you want to monitor.
 
 - _TODO: What does Metricbeat record?_
-Answer: Metricbeat makes it easy to collect specific information about the machines in the network.
+***Answer:** Metricbeat makes it easy to collect specific information about the machines in the network.
 Metricbeat gathers a variety of metrics and statistics from a server(operating system and other services on the server). It then ships them to an output destination of choice. It could be to Elasticsearch,logstash or any other data processing platforms.
 The configuration details of each machine may be found below.
 
@@ -57,20 +57,21 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Web2     | Webserver      | 10.0.0.6      | Linux (Ubuntu 18.04 LTS)|
 | Web3     | Webserver      | 10.0.0.7      | Linux (Ubuntu 18.04 LTS)|
 | ELKServer| Logs Data      | 10.1.0.4      | Linux (Ubuntu 18.04 LTS)|
+
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-- _TODO: My Personal IP address
+***Answer:** My Personal IP address
 
 Machines within the network can only be accessed by _SSH____.
 - _TODO: Which machine did you allow to access your ELK VM?
-Answer: Jump Box Provisioner (Ansible)
+***Answer:** Jump Box Provisioner (Ansible)
 
 -  What was its IP address?_
-Answer: 10.0.0.4 (Private IP)
+***Answer:** 10.0.0.4 (Private IP)
 
 A summary of the access policies in place can be found in the table below.
 
@@ -87,9 +88,9 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - _TODO: What is the main advantage of automating configuration with Ansible?
-***Answer: Ansible being an open source automation tool simplifies complex task and increases efficiency.
-         Ansible is advantageous because of it being easy to set up and use. Several Virtual Machines could be configured by running a script(Ansible playbook)
-         No special codes or skills were needed for the configuration, a playbook was designed and Ansible handled the configuration on the machines after Ansible          control node has already been configured. Ansible used SSH to communicate with the remote hosts and run the task in the playbook._
+-***Answer:** Ansible being an open source automation tool simplifies complex task and increases efficiency.
+             Ansible is advantageous because of it being easy to set up and use. Several Virtual Machines could be configured by running a script(Ansible playbook)
+            No special codes or skills were needed for the configuration, a playbook was designed and Ansible handled the configuration on the machines after    Ansible control node has already been configured. Ansible used SSH to communicate with the remote hosts and run the task in the playbook._
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
@@ -115,39 +116,39 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
- Answer: Web-1 10.0.0.5
-         Web-2 10.0.0.6
-         Web-3 10.0.0.7
+ ***Answer:** Web-1 10.0.0.5
+              Web-2 10.0.0.6
+              Web-3 10.0.0.7
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
- Answer: Filebeat
-         Metricbeat
+ ***Answer:** Filebeat
+              Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-Answer: 
+***Answer:** 
 Filebeat enables analysts to monitor files for suspicious changes.
 
-Metricbeat
+***Metricbeat**
 Metricbeat makes it easy to collect specific information about the machines in the network.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-SSH into the control node and follow the steps below:
+***SSH into the control node and follow the steps below:**
 - Copy the filebeat-config.yml file to /etc/ansible/files.
 - Update the filebeat-config.yml file to include the Private IP address of the ELK Server. The sections output.elasticsearch and setup.kibana of the configuration file.
 - Run the playbook, and navigate to back to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected.This is to confirm if ELK stack is receiving logs.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? (Insert configfile) filebeat-playbook.yml file
--  Where do you copy it? /etc/ansible
-- _Which file do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts file.
+***TODO: Answer the following questions to fill in the blanks:**_
+- _Which file is the playbook? [Ansible Filebeat Playbook Installation Yaml file](Ansible/Filebeat-playbook.yml)filebeat-playbook.yml file 
+-  Where do you copy it? ***/etc/ansible**
+- _Which file do you update to make Ansible run the playbook on a specific machine? ***/etc/ansible/hosts file**.
 -  How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
- When the /etc/ansible/hosts file is updated, an additional group is added under a header using brackets [Elk] with an IP address 10.1.0.4 of the ELKserver that Ansible should connect to.
+ ***When the /etc/ansible/hosts file is updated, an additional group is added under a header using brackets [Elk] with an IP address 10.1.0.4 of the ELKserver that Ansible should connect to.**
 - _Which URL do you navigate to in order to check that the ELK server is running?
- Answer:  http://[your.VM.IP]:5601/app/kibana. Use the public IP address of the ELK server that you created in place of [your.VM.IP]
+ ***Answer:  http://[your.VM.IP]:5601/app/kibana. Use the public IP address of the ELK server that you created in place of [your.VM.IP]**
  
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 * ssh sysadmin@jumpboxprovisioner(Public IP)
