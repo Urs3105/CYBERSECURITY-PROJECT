@@ -76,7 +76,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses      |
 |----------|---------------------|-------------------------  |
-| Jump Box |     No/Yes          | Personal IP, 10.1.0.4.    |
+| Jump Box |     No/Yes          | Personal IP,10.0.0.0/16 10.1.0.4|
 | Web1     |     No              | 10.0.0.4 Jumpbox, 10.1.0.4|
 | Web2     |     No              | 10.0.0.4 Jump box,10.1.0.4|
 | Web3     |     No              | 10.0.0.4 Jump box,10.1.0.4|
