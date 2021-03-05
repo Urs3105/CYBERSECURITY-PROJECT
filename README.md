@@ -33,20 +33,20 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available/responsive, in addition to restricting access to the network.
 - _TODO: What aspect of security do load balancers protect? 
-Answer: Load Balancers defends a system/organisation from DDoS attacks by shifting attack traffic from the server to a public cloud provider.
-        Load balancers ensure the efficient distribution of incoming network traffic across multiple servers
+**Answer: Load Balancers defends a system/organisation from DDoS attacks by shifting attack traffic from the server to a public cloud provider.
+        Load balancers ensure the efficient distribution of incoming network traffic across multiple servers**
 -  What is the advantage of a jump box?_
-Answer: A jump box is essentially identical to a gateway router. It gives system administrators remote access to the network to provide all the support it needs with very restricted access.The jumpbox sits infront of other machines that are not exposed to the public internet, controlling access to these machines by allowing connections from specific IP addresses.There is just one path in (via SSH)
+**Answer: A jump box is essentially identical to a gateway router. It gives system administrators remote access to the network to provide all the support it needs with very restricted access.The jumpbox sits infront of other machines that are not exposed to the public internet, controlling access to these machines by allowing connections from specific IP addresses.There is just one path in (via SSH)**
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 
 - _TODO: What does Filebeat watch for?_ 
-***Answer:** Filebeat enables analysts to monitor files for suspicious changes. Filebeat can be used to collect, analyze and visualize ELK logs in a single command.Filebeat monitors, generate and organise the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. is built to collect data about specific files on remote machines and must be installed on the VMs you want to monitor.
+***Answer: Filebeat enables analysts to monitor files for suspicious changes. Filebeat can be used to collect, analyze and visualize ELK logs in a single command.Filebeat monitors, generate and organise the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. is built to collect data about specific files on remote machines and must be installed on the VMs you want to monitor.**
 
 - _TODO: What does Metricbeat record?_
-***Answer:** Metricbeat makes it easy to collect specific information about the machines in the network.
+**Answer: Metricbeat makes it easy to collect specific information about the machines in the network.
 Metricbeat gathers a variety of metrics and statistics from a server(operating system and other services on the server). It then ships them to an output destination of choice. It could be to Elasticsearch,logstash or any other data processing platforms.
-The configuration details of each machine may be found below.
+The configuration details of each machine may be found below.**
 
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
