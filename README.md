@@ -54,14 +54,14 @@ The configuration details of each machine may be found below.**
 
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function       | IP Address    | Operating System        |
-|----------|--------------- |------------   |------------------       |
-| Jump Box | Gateway        | 10.0.0.4      | Linux (Ubuntu 18.04 LTS)|
-| Web1     | Webserver      | 10.0.0.5      | Linux (Ubuntu 18.04 LTS)|
-| Web2     | Webserver      | 10.0.0.6      | Linux (Ubuntu 18.04 LTS)|
-| Web3     | Webserver      | 10.0.0.7      | Linux (Ubuntu 18.04 LTS)|
-| ELKServer| Logs Data      | 10.1.0.4      | Linux (Ubuntu 18.04 LTS)|
-
+| Name         | Function                      | IP Address                | Operating System        |
+|--------------|----------------------------   |-------------------------- |------------------       |
+| Jump Box     | Gateway                       | 10.0.0.4/52.229.62.5      | Linux (Ubuntu 18.04 LTS)|
+| Web-1        | Webserver                     | 10.0.0.5                  | Linux (Ubuntu 18.04 LTS)|
+| Web-2        | Webserver                     | 10.0.0.6                  | Linux (Ubuntu 18.04 LTS)|
+| Web-3        | Webserver                     | 10.0.0.7                  | Linux (Ubuntu 18.04 LTS)|
+| ELKServer.   | Logs Data                     | 10.1.0.4                  | Linux (Ubuntu 18.04 LTS)|
+| Load Balancer| Distributes Network traffic   | 52.247.213.224            | Linux (Ubuntu 18.04 LTS)|
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
@@ -75,7 +75,7 @@ Machines within the network can only be accessed by _SSH____.
 
 - _TODO: Which machine did you allow to access your ELK VM?
 
-***Answer:** Jump Box Provisioner (Ansible)
+- ***Answer:** Jump Box Provisioner (Ansible)
 
 -  What was its IP address?_
 
@@ -83,14 +83,14 @@ Machines within the network can only be accessed by _SSH____.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses      |
-|----------|---------------------|-------------------------  |
-| Jump Box |     No/Yes          | Personal IP,10.0.0.0/16 10.1.0.4|
-| Web1     |     No              | 10.0.0.4 Jumpbox, 10.1.0.4|
-| Web2     |     No              | 10.0.0.4 Jump box,10.1.0.4|
-| Web3     |     No              | 10.0.0.4 Jump box,10.1.0.4|
-| ELKServer|     No/Yes          | 10.0.0.4/Personal IP      |
-
+| Name        | Publicly Accessible | Allowed IP Addresses            |
+|----------   |---------------------|-------------------------        |
+| Jump Box    |     Yes             | Personal IP,10.0.0.0/16 10.1.0.4|
+| Web1        |     No              | 10.0.0.4 Jumpbox, 10.1.0.4      |
+| Web2        |     No              | 10.0.0.4 Jump box,10.1.0.4      |
+| Web3        |     No              | 10.0.0.4 Jump box,10.1.0.4      |
+| ELKServer   |     Yes             | 10.0.0.4/Personal IP            |
+|Load Balancer|     Yes             | Personal IP/ 10.0.0.0/16.       |
 
 ### Elk Configuration
 
