@@ -32,20 +32,30 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available/responsive, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? 
-Answer: Load Balancers defends a system/organisation from DDoS attacks by shifting attack traffic from the server to a public cloud provider.
-        Load balancers ensure the efficient distribution of incoming network traffic across multiple servers
+- What aspect of security do load balancers protect? 
+- ***Answer:*** 
+Load Balancers defends a system/organisation from DDoS attacks by shifting attack traffic from the server to a public cloud provider.
+Load balancers ensure the efficient distribution of incoming network traffic across multiple servers
+
 -  What is the advantage of a jump box?_
-Answer: A jump box is essentially identical to a gateway router. It gives system administrators remote access to the network to provide all the support it needs with very restricted access.The jumpbox sits infront of other machines that are not exposed to the public internet, controlling access to these machines by allowing connections from specific IP addresses.There is just one path in (via SSH)
+***Answer:*** 
+A jump box is essentially identical to a gateway router. It gives system administrators remote access to the network to provide all the support it needs with very restricted access.The jumpbox sits infront of other machines that are not exposed to the public internet, controlling access to these machines by allowing connections from specific IP addresses.There is just one path in (via SSH)
+
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 
 - _TODO: What does Filebeat watch for?_ 
--Answer: Filebeat enables analysts to monitor files for suspicious changes. Filebeat can be used to collect, analyze and visualize ELK logs in a single command.Filebeat monitors, generate and organise the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. is built to collect data about specific files on remote machines and must be installed on the VMs you want to monitor.
+-***Answer:*** 
+Filebeat enables analysts to monitor files for suspicious changes. Filebeat can be used to collect, analyze and visualize ELK logs in a single command.Filebeat monitors, generate and organise the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. is built to collect data about specific files on remote machines and must be installed on the VMs you want to monitor.
 
-- _TODO: What does Metricbeat record?_
-Answer: Metricbeat makes it easy to collect specific information about the machines in the network.
+
+- What does Metricbeat record?_
+- ***Answer:*** 
+Metricbeat makes it easy to collect specific information about the machines in the network.
 Metricbeat gathers a variety of metrics and statistics from a server(operating system and other services on the server). It then ships them to an output destination of choice. It could be to Elasticsearch,logstash or any other data processing platforms.
+
+
+
 The configuration details of each machine may be found below.
 
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -65,14 +75,14 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-- _TODO: My Personal IP address
+- ***Answer: My Personal IP address***
 
-Machines within the network can only be accessed by _SSH____.
+Machines within the network can only be accessed by ***SSH***.
 - _TODO: Which machine did you allow to access your ELK VM?
-Answer: Jump Box Provisioner (Ansible)
+- ***Answer: Jump Box Provisioner (Ansible)***
 
 -  What was its IP address?_
-Answer: 10.0.0.4 (Private IP)
+-  ***Answer: 10.0.0.4 (Private IP)***
 
 A summary of the access policies in place can be found in the table below.
 
@@ -89,7 +99,7 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - _TODO: What is the main advantage of automating configuration with Ansible?
-***Answer:***
+- ***Answer:***
          Ansible being an open source automation tool simplifies complex task and increases efficiency.
          Ansible is advantageous because of it being easy to set up and use. Several Virtual Machines could be configured by running a script(Ansible playbook)
          No special codes or skills were needed for the configuration, a playbook was designed and Ansible handled the configuration on the machines after Ansible          control node has already been configured. Ansible used SSH to communicate with the remote hosts and run the task in the playbook._
@@ -148,7 +158,7 @@ SSH into the control node and follow the steps below:
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? 
-- ***Answer: [[Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml)filebeat-playbook.yml file***
+- ***Answer: [[Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml) filebeat-playbook.yml file***
 -  Where do you copy it? 
 -  ***Answer:/etc/ansible***
 - _Which file do you update to make Ansible run the playbook on a specific machine? 
