@@ -96,12 +96,12 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ***Install Docker*** Installs Docker to the system
-- ***Install Python3-pip*** Installs Python3-pip to the Docker system
-- ***Install Docker Module to pip3*** Installs a Docker module to Python3-pip for the ELK stack
-- ***Increase Virtula Memory*** 
-- ***Download and Launch a Docker ELK Container***
-- ***Enable Docker system service to boot*** 
+- ***Install Docker*** - Installs Docker to the system
+- ***Install Python3-pip*** - Installs Python3-pip to the Docker system
+- ***Install Docker Module to pip3*** - Installs a Docker module to Python3-pip for the ELK stack
+- ***Increase Virtula Memory*** - 
+- ***Download and Launch a Docker ELK Container*** -
+- ***Enable Docker system service to boot*** -
 
 
 
@@ -147,13 +147,16 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to back to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected.This is to confirm if ELK stack is receiving logs.
 
 _TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? (Insert configfile) filebeat-playbook.yml file
--  Where do you copy it? /etc/ansible
-- _Which file do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts file.
+- _Which file is the playbook? 
+- ***(Insert configfile) filebeat-playbook.yml file***
+-  Where do you copy it? 
+-  ***/etc/ansible***
+- _Which file do you update to make Ansible run the playbook on a specific machine? 
+- ***/etc/ansible/hosts file.***
 -  How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
- When the /etc/ansible/hosts file is updated, an additional group is added under a header using brackets [Elk] with an IP address 10.1.0.4 of the ELKserver that Ansible should connect to.
+-  ***When the /etc/ansible/hosts file is updated, an additional group is added under a header using brackets [Elk] with an IP address 10.1.0.4 of the ELKserver that Ansible should connect to.***
 - _Which URL do you navigate to in order to check that the ELK server is running?
- Answer:  http://[your.VM.IP]:5601/app/kibana. Use the public IP address of the ELK server that you created in place of [your.VM.IP]
+- ***Answer:  http://[your.VM.IP]:5601/app/kibana. Use the public IP address of the ELK server that you created in place of [your.VM.IP]***
  
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 * ssh sysadmin@jumpboxprovisioner(Public IP)
