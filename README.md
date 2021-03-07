@@ -175,10 +175,13 @@ SSH into the control node and follow the steps below:
 - Copy the filebeat-config.yml and metricbeat-config.yml file to /etc/ansible/files.
 - Update the filebeat-config.yml and metricbeat-config.yml file to include the Private IP address of the ELK Server. The sections output.elasticsearch and setup.kibana of the configuration file.
 
-- Run the playbook, and navigate to back to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected.This is to confirm if ELK stack is receiving logs.
+<img width="600" alt="filebeat-config update" src="https://user-images.githubusercontent.com/79960810/110254938-917d0b80-7f4e-11eb-9089-39c3b728b84b.png">
+
+<img width="533" alt="filebeat-config update(Kibana)" src="https://user-images.githubusercontent.com/79960810/110254966-b07b9d80-7f4e-11eb-9ed5-00fa1967a0ad.png">
+
+- Run the playbook, and navigate to back to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected.This is to confirm if ELK stack is receiving logs.(Kibana)
 
 <img width="693" alt="Filebeat-playbook" src="https://user-images.githubusercontent.com/79960810/110254559-ec156800-7f4c-11eb-9fb0-b82c4135e4ba.png">
-
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? 
