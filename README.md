@@ -210,3 +210,19 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 * nano hosts (Update the file with Private IP addresses of webservers that needs ansible playbook run on)
 * ansible -m ping all ( This pings all of the webservers listed in the hosts file)
 * ansible-playbook my-playbook.yml ( The ansible-playbook will run the contents of the desired named yml file)
+
+***Filebeat***
+* cd into /etc/ansible directory
+* touch filebeat-playbook.yml
+* mkdir files
+* cp filebeat-config.yml ./files
+* nano filebeat-playbook.yml [Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml)
+* /etc/ansible/files# Run ansible-playbook filebeat-playbook.yml
+
+***Metricbeat*** ssh into the control node (ssh into the Jumpbox)
+* cd into /etc/ansible directory
+* touch metricbeat-config.yml
+* cp metricbeat-config.yml ./files
+* touch metricbeat-playbook.yml
+* nano metricbeat-playbook.yml [Ansible Metricbeat Installation Playbook Yaml file](Ansible/Metricbeat-playbook.yml)
+* /etc/ansible/files# Run ansible-playbook metricbeat-playbook.yml
