@@ -172,12 +172,8 @@ Metricbeat makes it easy to collect specific information about the machines in t
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the filebeat-config.yml file to /etc/ansible/files.
-- Update the filebeat-config.yml file to include the Private IP address of the ELK Server. The sections output.elasticsearch and setup.kibana of the configuration file.
-
-![filebeat-config update](https://user-images.githubusercontent.com/79960810/110254324-f5520500-7f4b-11eb-8f88-227006aeadeb.png)
-
-![filebeat-config update(kibana)](https://user-images.githubusercontent.com/79960810/110254391-334f2900-7f4c-11eb-8d60-506457c9cea8.png)
+- Copy the filebeat-config.yml and metricbeat-config.yml file to /etc/ansible/files.
+- Update the filebeat-config.yml and metricbeat-config.yml file to include the Private IP address of the ELK Server. The sections output.elasticsearch and setup.kibana of the configuration file.
 
 - Run the playbook, and navigate to back to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected.This is to confirm if ELK stack is receiving logs.
 
