@@ -32,6 +32,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available/responsive, in addition to restricting access to the network.
+
 - What aspect of security do load balancers protect? 
 
 ***Answer:*** 
@@ -156,8 +157,6 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
-- ***Answer:*** 
-
 - ***Filebeat*** 
 
 Enables analysts to monitor files for suspicious changes.
@@ -191,7 +190,7 @@ _TODO: Answer the following questions to fill in the blanks:_
 ***Answer: When the /etc/ansible/hosts file is updated, an additional group is added under a header using brackets [Elk] with an IP address 10.1.0.4 of the ELKserver that Ansible should connect to.***
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
-- ***Answer:  http://[your.VM.IP]:5601/app/kibana. Use the public IP address of the ELK server that you created in place of [your.VM.IP]***
+***Answer:  http://[your.VM.IP]:5601/app/kibana. Use the public IP address of the ELK server that you created in place of [your.VM.IP]***
 
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
