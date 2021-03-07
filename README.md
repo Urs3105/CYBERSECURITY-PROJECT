@@ -115,20 +115,20 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 - In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 
-- ***Install Docker*** - Installs Docker to the system
+- ***Install Docker.io*** - Installs Docker to the system
 
 - ***Install Python3-pip*** - Installs Python3-pip to the Docker system
 
-- ***Install Docker Module to pip3*** - Installs a Docker module to Python3-pip for the ELK stack
+- ***Install Docker python module*** - Installs a Docker module to Python3-pip for the ELK stack
 
-- ***Increase Virtula Memory*** - 
+- ***Increase Virtula Memory*** - Before running the elk container, the virtual memory needs to be increased(Use more memory).The virtual memory is increased to 262144 and this will take effect when the system is reloaded
 
 - ***Download and Launch a Docker ELK Container*** - After Docker is installed,download and run the sebp/elk:761 container.The container should be started with these published ports:
   ***5601:5601*** (Kibana)
   ***9200:9200*** (ElasticSearch)
   ***5044:5044*** (Filebeat)
 
-- ***Enable Docker system service to boot*** -
+- ***Enable Docker system service to boot*** - This task will "enable" the docker system when the system is restarted.
 
 
 
