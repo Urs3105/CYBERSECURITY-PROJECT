@@ -50,13 +50,15 @@ The configuration details of each machine may be found below.
 
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function       | IP Address    | Operating System        |
-|----------|--------------- |------------   |------------------       |
-| Jump Box | Gateway        | 10.0.0.4      | Linux (Ubuntu 18.04 LTS)|
-| Web1     | Webserver      | 10.0.0.5      | Linux (Ubuntu 18.04 LTS)|
-| Web2     | Webserver      | 10.0.0.6      | Linux (Ubuntu 18.04 LTS)|
-| Web3     | Webserver      | 10.0.0.7      | Linux (Ubuntu 18.04 LTS)|
-| ELKServer| Logs Data      | 10.1.0.4      | Linux (Ubuntu 18.04 LTS)|
+| Name        | Function                   | IP Address    | Operating System        |
+|----------   |----------------------------|------------   |------------------       |
+| Jump Box    | Gateway                    | 10.0.0.4      | Linux (Ubuntu 18.04 LTS)|
+| Web1        | Webserver                  | 10.0.0.5      | Linux (Ubuntu 18.04 LTS)|
+| Web2        | Webserver                  | 10.0.0.6      | Linux (Ubuntu 18.04 LTS)|
+| Web3        | Webserver                  | 10.0.0.7      | Linux (Ubuntu 18.04 LTS)|
+| ELKServer.  | Logs Data                  | 10.1.0.4      | Linux (Ubuntu 18.04 LTS)|
+|Load Balancer| Distributes Network Traffic| 52.247.213.224| Linux (Ubuntu 18.04 LTS)|
+
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
@@ -74,20 +76,21 @@ Answer: 10.0.0.4 (Private IP)
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses               |
-|----------|---------------------|-------------------------           |
-| Jump Box |     No/yes          | Personal IP, 10.0.0.0/16,10.1.0.4  |
-| Web1     |     No              | 10.0.0.4 Jumpbox , 10.1.0.4        |
-| Web2     |     No              | 10.0.0.4 Jump box, 10.1.0.4        |
-| Web3     |     No              | 10.0.0.4 Jump box, 10.1.0.4        |
-| ELKServer|     No/Yes          | 10.0.0.4/Personal IP Address.      |
-
+| Name        | Publicly Accessible | Allowed IP Addresses               |
+|----------   |---------------------|-------------------------           |
+| Jump Box    |     Yes             | Personal IP, 10.0.0.0/16,10.1.0.4  |
+| Web1        |     No              | 10.0.0.4 Jumpbox , 10.1.0.4        |
+| Web2        |     No              | 10.0.0.4 Jump box, 10.1.0.4        |
+| Web3        |     No              | 10.0.0.4 Jump box, 10.1.0.4        |
+| ELKServer.  |     Yes             | 10.0.0.4/Personal IP Address.      |
+|Load Balancer|     Yes             | Personal IP, 10.0.0.0/16
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - _TODO: What is the main advantage of automating configuration with Ansible?
-***Answer: Ansible being an open source automation tool simplifies complex task and increases efficiency.
+***Answer:***
+         Ansible being an open source automation tool simplifies complex task and increases efficiency.
          Ansible is advantageous because of it being easy to set up and use. Several Virtual Machines could be configured by running a script(Ansible playbook)
          No special codes or skills were needed for the configuration, a playbook was designed and Ansible handled the configuration on the machines after Ansible          control node has already been configured. Ansible used SSH to communicate with the remote hosts and run the task in the playbook._
 
@@ -111,9 +114,13 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
- ***Answer: Web-1 10.0.0.5
-            Web-2 10.0.0.6
-            Web-3 10.0.0.7
+- ***Answer:
+
+- ***Web-1 10.0.0.5***
+
+-  ***Web-2 10.0.0.6***
+
+-  ***Web-3 10.0.0.7***
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
