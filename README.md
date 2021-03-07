@@ -174,7 +174,15 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the filebeat-config.yml file to /etc/ansible/files.
 - Update the filebeat-config.yml file to include the Private IP address of the ELK Server. The sections output.elasticsearch and setup.kibana of the configuration file.
+
+![filebeat-config update](https://user-images.githubusercontent.com/79960810/110254324-f5520500-7f4b-11eb-8f88-227006aeadeb.png)
+
+![filebeat-config update(kibana)](https://user-images.githubusercontent.com/79960810/110254391-334f2900-7f4c-11eb-8d60-506457c9cea8.png)
+
 - Run the playbook, and navigate to back to the Filebeat installation page on the ELK server GUI to check that the installation worked as expected.This is to confirm if ELK stack is receiving logs.
+
+<img width="693" alt="Filebeat-playbook" src="https://user-images.githubusercontent.com/79960810/110254559-ec156800-7f4c-11eb-9fb0-b82c4135e4ba.png">
+
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? 
@@ -193,6 +201,7 @@ _TODO: Answer the following questions to fill in the blanks:_
 ***Answer: When the /etc/ansible/hosts file is updated, an additional group is added under a header using brackets [Elk] with an IP address 10.1.0.4 of the ELKserver that Ansible should connect to.***
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
+
 ***Answer:  http://[your.VM.IP]:5601/app/kibana. Use the public IP address of the ELK server that you created in place of [your.VM.IP]***
 
 
