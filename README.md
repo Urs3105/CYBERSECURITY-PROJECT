@@ -123,7 +123,13 @@ The playbook implements the following tasks:
 
 - ***Increase Virtula Memory*** - 
 
-- ***Download and Launch a Docker ELK Container*** -
+- ***Download and Launch a Docker ELK Container*** - After Docker is installed,download and run the sebp/elk:761 container.The container should be started with these published ports:
+
+***5601:5601*** (Kibana)
+
+***9200:9200*** (ElasticSearch)
+
+***5044:5044*** (Filebeat)
 
 - ***Enable Docker system service to boot*** -
 
