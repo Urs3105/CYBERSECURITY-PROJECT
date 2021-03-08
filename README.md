@@ -118,7 +118,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 ***Answer:***
          Ansible being an open source automation tool simplifies complex task and increases efficiency.
          Ansible is advantageous because of it being easy to set up and use. Several Virtual Machines could be configured by running an (ansible-playbook).
-         No special codes or skills are needed for configuration, a playbook is designed with all tasks that needs to be accomplished and ansible handles the     configuration on the machines after Ansible control node has already been configured. Ansible uses SSH to communicate with the remote hosts as it runs the task in the playbook._
+         No special codes or skills are needed for configuration, a playbook is designed with all tasks that needs to be accomplished and ansible handles the    rest. Ansible uses SSH to communicate with the remote hosts._
 
 The playbook implements the following tasks:
 - In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
