@@ -98,11 +98,11 @@ A summary of the access policies in place can be found in the table below.
 | Name        | Publicly Accessible | Allowed IP Addresses               |
 |----------   |---------------------|-------------------------           |
 | Jump Box    |     Yes             | Personal IP, 10.0.0.0/16,10.1.0.4  |
-| Web1        |     No              | 10.0.0.4 Jumpbox , 10.1.0.4        |
+| Web1        |     No              | 10.0.0.4 Jump box 10.1.0.4         |
 | Web2        |     No              | 10.0.0.4 Jump box, 10.1.0.4        |
 | Web3        |     No              | 10.0.0.4 Jump box, 10.1.0.4        |
-| ELKServer.  |     Yes             | 10.0.0.4/Personal IP Address.      |
-|Load Balancer|     Yes             | Personal IP, 10.0.0.0/16
+| ELKServer.  |     Yes             | 10.0.0.4,Personal IP, 10.0.0.0/16  |
+|Load Balancer|     Yes             | Personal IP, 10.0.0.0/16           |
 
 Access control configurations made around the entire network had a network security group created with Inbound and Outbound security rules. The rules being set here allows only my Personal IP address access to the jump box. The security rules set within the subnet allows the webservers(web-1, web-2, web-3) to communicate with eachother and the jump box.
 An SSH key was generated and specially configured in the Web servers on the network to prevent brute force attack.
