@@ -16,7 +16,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - [Ansible Filebeat Configuration file](Ansible/Filebeat-config.yml)
   - [Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml)
   - [Ansible Metricbeat Configuration Yaml file](Ansible/Metricbeat-config.yml)
-  - [Ansible Metricbeat Installation Playbook Yaml file](Ansible/Metricbeat-playbook.yml)
+  - [Ansible Metricbeat Playbook Yaml file](Ansible/Metricbeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -132,6 +132,7 @@ The playbook implements the following tasks:
 - ***Increase Virtula Memory*** - Before running the elk container, the virtual memory needs to be increased("Use more memory").The virtual memory is increased to 262144 and this will take effect when the system is reloaded
 
 - ***Download and Launch a Docker ELK Container*** - After Docker is installed,download and run the sebp/elk:761 container.The container should be started with these published ports:
+  
   ***5601:5601*** (Kibana)
   ***9200:9200*** (ElasticSearch)
   ***5044:5044*** (Logstash)
@@ -159,8 +160,8 @@ We have installed the following Beats on these machines:
 - Specify which Beats you successfully installed_
 
 ***Answer: 
-- ***Filebeat 7.6.2***
-- ***Metricbeat 7.6.1***
+- ***Filebeat***
+- ***Metricbeat***
 
 These Beats allow us to collect the following information from each machine:
 - In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
@@ -191,18 +192,20 @@ SSH into the control node and follow the steps below:
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? 
 
-***Answer: [[Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml) filebeat-playbook.yml file***
+***Answer: [Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml)*** and [Ansible Metricbeat Playbook Yaml file](Ansible/Metricbeat-playbook.yml)
+
 -  Where do you copy it? 
 
-***Answer:/etc/ansible***
+***Answer:/etc/ansible/files***
 
 - _Which file do you update to make Ansible run the playbook on a specific machine? 
 
-***Answer:/etc/ansible/hosts file.***
+***Answer:/etc/ansible/hosts.***
 
 -  How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 
 ***Answer: When the /etc/ansible/hosts file is updated, an additional group is added under a header using brackets [Elk] with an IP address 10.1.0.4 of the ELKserver that Ansible should connect to.***
+***With filebeat, the filebeat-config.yaml file is updated with the Private IP of the ELK server to connect the web VM's to the Elk server.*** 
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
@@ -227,7 +230,7 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 * Run ansible-playbook filebeat-playbook.yml
 * Navigate to  http://[your.VM.IP]:5601/app/kibana
 * Select Module Status and click Check Data. (To confirm if the filebeat installation was a success and that the ELK stack was receiving logs)
-* Scroll to the bottom and click on Verify Incoming Data.* 
+* Scroll to the bottom and click on Verify Incoming Data. 
 
 ***Metricbeat*** 
 * cd into /etc/ansible directory
@@ -237,7 +240,7 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 * nano and update metricbeat-playbook.yml [Ansible Metricbeat Installation Playbook Yaml file](Ansible/Metricbeat-playbook.yml)
 * Run ansible-playbook metricbeat-playbook.yml
 * Navigate to http://[your.VM.IP]:5601/app/kibana
-* On the Metricbeat installation page in the ELK server GUI, scroll to  Module Status and click Check Data.(To verify the playbook was installed succesfully)
+* On the Metricbeat installation page in the ELK server GUI, scroll to  Module Status and click Check Data.(To verify the playbook works as expected)
 
 
 ## References
