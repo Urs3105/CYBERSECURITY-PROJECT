@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
 
-<img width="1040" alt="ELK Stack Deployment" src="https://user-images.githubusercontent.com/79960810/110149954-e4629180-7d9b-11eb-872c-9526df0cdbff.png">
+[<img width="1040" alt="ELK Stack Deployment" src]="https://user-images.githubusercontent.com/79960810/110149954-e4629180-7d9b-11eb-872c-9526df0cdbff.png">
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -232,10 +232,19 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 * nano filebeat-playbook.yml [Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml)
 * /etc/ansible/files# Run ansible-playbook filebeat-playbook.yml
 
-***Metricbeat*** ssh into the control node (ssh into the Jumpbox)
+***Metricbeat*** (ssh into the Jumpbox)
 * cd into /etc/ansible directory
 * touch metricbeat-config.yml
 * cp metricbeat-config.yml ./files
 * touch metricbeat-playbook.yml
 * nano metricbeat-playbook.yml [Ansible Metricbeat Installation Playbook Yaml file](Ansible/Metricbeat-playbook.yml)
 * /etc/ansible/files# Run ansible-playbook metricbeat-playbook.yml
+
+***Install-Elk***
+*                 [Elk Stack Server Installation Yaml file](Ansible/install-elk.yml)
+
+###References
+
+***https://logz.io/blog/metricbeat-elastic-stack-5-0/***
+
+***https://www.elastic.co/guide/en/beats/filebeat/current/logstash-output.html***
