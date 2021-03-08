@@ -129,7 +129,7 @@ The playbook implements the following tasks:
 
 - ***Install Docker python module*** - Installs a Docker module to Python3-pip for the ELK stack
 
-- ***Increase Virtula Memory*** - Before running the elk container, the virtual memory needs to be increased("Use more memory").The virtual memory is increased to 262144 and this will take effect when the system is reloaded
+- ***Increase Virtual Memory*** - Before running the elk container, the virtual memory needs to be increased("Use more memory").The virtual memory is increased to 262144 and this will take effect when the system is reloaded
 
 - ***Download and Launch a Docker ELK Container*** - After Docker is installed,download and run the sebp/elk:761 container.The container should be started with these published ports:
   
