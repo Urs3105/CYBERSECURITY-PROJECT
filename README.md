@@ -226,8 +226,6 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 *  Navigate to the url ***http://[your.VM.IP]:5601/app/kibana. Use the public IP address of the ELK server that you created in place of [your.VM.IP]***
 
 ***Filebeat***
-* cd into /etc/ansible directory
-* touch filebeat-playbook.yml
 * mkdir files
 * cp filebeat-config.yml ./files
 * nano to update filebeat-playbook.yml [Ansible Filebeat Playbook Yaml file](Ansible/Filebeat-playbook.yml)
@@ -237,8 +235,6 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 * Scroll to the bottom and click on Verify Incoming Data. 
 
 ***Metricbeat*** 
-* cd into /etc/ansible directory
-* touch metricbeat-config.yml
 * cp metricbeat-config.yml ./files
 * touch metricbeat-playbook.yml
 * nano and update metricbeat-playbook.yml [Ansible Metricbeat Installation Playbook Yaml file](Ansible/Metricbeat-playbook.yml)
