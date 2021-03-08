@@ -208,6 +208,7 @@ _TODO: Answer the following questions to fill in the blanks:_
 -  How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 
 ***Answer: When the /etc/ansible/hosts file is updated, an additional group is added under a header using brackets [Elk] with an IP address 10.1.0.4 of the ELKserver that Ansible should connect to.***
+
 ***With filebeat, the filebeat-config.yaml file is updated with the Private IP of the ELK server to connect the web VM's to the Elk server.*** 
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
