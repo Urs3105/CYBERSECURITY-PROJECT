@@ -80,7 +80,9 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-***Answer: My Personal IP address***
+
+***Answer: 
+***My Personal IP address***
 
 Machines within the network can only be accessed by ***SSH***.
 - Which machine did you allow to access your ELK VM?
@@ -101,6 +103,10 @@ A summary of the access policies in place can be found in the table below.
 | Web3        |     No              | 10.0.0.4 Jump box, 10.1.0.4        |
 | ELKServer.  |     Yes             | 10.0.0.4/Personal IP Address.      |
 |Load Balancer|     Yes             | Personal IP, 10.0.0.0/16
+
+Access control configurations made around the entire network had a network security group created with Inbound and Outbound security rules. The rules being set here allows only my Personal IP address access to the jump box. The security rules set within the subnet allows the webservers(web-1, web-2, web-3) to communicate with eachother and the jump box.
+An SSH key was generated and specially configured in the Web servers on the network to prevent brute force attack.
+
 
 ### Elk Configuration
 
@@ -126,10 +132,9 @@ The playbook implements the following tasks:
 - ***Download and Launch a Docker ELK Container*** - After Docker is installed,download and run the sebp/elk:761 container.The container should be started with these published ports:
   ***5601:5601*** (Kibana)
   ***9200:9200*** (ElasticSearch)
-  ***5044:5044*** (Filebeat)
+  ***5044:5044*** (Logstash)
 
 - ***Enable Docker system service to boot*** - This task will "enable" the docker system when the system is restarted.
-
 
 
 
