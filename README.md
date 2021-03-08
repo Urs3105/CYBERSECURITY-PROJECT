@@ -134,10 +134,13 @@ The playbook implements the following tasks:
 - ***Download and Launch a Docker ELK Container*** - After Docker is installed,download and run the sebp/elk:761 container.The container should be started with these published ports:
   
   ***5601:5601*** (Kibana)
+  
   ***9200:9200*** (ElasticSearch)
+  
   ***5044:5044*** (Logstash)
 
 - ***Enable Docker system service to boot*** - This task will "enable" the docker system when the system is restarted.
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
