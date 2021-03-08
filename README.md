@@ -107,7 +107,7 @@ A summary of the access policies in place can be found in the table below.
 
 ## Note
 Access control configurations made around the entire network have a network security group created with Inbound and Outbound security rules. The rules being set here allows only my Personal IP address to access the jump box. The security rules that are set within the security group allow the webservers(web-1, web-2, web-3) to communicate with each other and the jump box securely.
-A SSH Key was generated and implemented to configure access for the ELK Stack, Jump Box Provisioner, and web servers on the network to prevent brute force attack and add an extra layer of security.
+An SSH Key was generated and implemented to configure access for the ELK Stack, Jump Box Provisioner, and web servers on the network to prevent brute force attack and to add an extra layer of security.
 
 
 ### Elk Configuration
